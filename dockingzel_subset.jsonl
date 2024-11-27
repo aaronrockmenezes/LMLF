@@ -1,0 +1,4 @@
+{"label": "1", "smiles": "C1[C@H](COC2=C1C=C(C=C2F)F)N3C(=CNC3=S)CCN"}
+{"label": "1", "smiles": "C1=CC(=C(C=C1CCN)O)O"}
+{"label": "0", "smiles": "CC(C)C1=CC2=C(C=C1)C3(CCCC(C3CC2(C)CN)C.C1=CC=C(C=C1)C(=O)O"}
+{"label": "0", "smiles": "CC1=CC=C(C=C1)N2CCN(CC2)CC(COC3=CC=CC4=CC=CC=C43)O"}
