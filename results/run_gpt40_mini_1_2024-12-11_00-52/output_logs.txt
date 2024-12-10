@@ -1,0 +1,1053 @@
+------------ Phase 0 - Optimizing docking_score ------------
+------------ Iteration 1 ------------
+Current constraints:-
+docking_score: [4.5, inf]
+molecular_weight: [200, 700]
+logp: [0, 5]
+sas: [0, 5]
+substructure: C1=CC(=O)OC2=CC(=C(C=C21)O)O
+------------ Sample 1 ------------
+Sampled molecule: C1=CC(=C(C=C1CCN)O)O
+Molecule: C1=CC(=O)OC2=CC(=C(C=C21)O)OCCN(C)C(C)C(=O)N(C)C(=O)C(C)C(=O)O has a valid SMILES string
+New molecule generated: C1=CC(=O)OC2=CC(=C(C=C21)O)OCCN(C)C(C)C(=O)N(C)C(=O)C(C)C(=O)O
+
+------------ Sample 2 ------------
+Sampled molecule: [C]C1=[C]C(=O)OC2=C1[C]=C(C(=[C]2)O[C][C][C]([C])C(=O)[N]C1=[C][C]=C([C]=[C]1)N1[C][C][C][C][C]1)[O]
+Invalid molecule generated. Skippping...
+
+------------ Sample 3 ------------
+Sampled molecule: C1[C@H](COC2=C1C=C(C=C2F)F)N3C(=CNC3=S)CCNCC4=CC=CC=C4
+Molecule: C1=CC(=O)OC2=CC(=C(C=C21)O)OCCN(C)C(C)C(=S)N(C)C(C)C(=O)O has a valid SMILES string
+New molecule generated: C1=CC(=O)OC2=CC(=C(C=C21)O)OCCN(C)C(C)C(=S)N(C)C(C)C(=O)O
+
+Total unique molecules generated: 2
+Calculating Docking Score...
+Substructure match not found. Using default values: True
+Docking Score: 5.73354, Molecular weight: 420.41800
+New molecule satisfies constraints: C1=CC(=O)OC2=CC(=C(C=C21)O)OCCN(C)C(C)C(=O)N(C)C(=O)C(C)C(=O)O
+
+Calculating Docking Score...
+Substructure match not found. Using default values: True
+Docking Score: 4.36955, Molecular weight: 408.47600
+Docking score: 4.369553861676995 not within threshold
+New molecule does not satisfy constraints: C1=CC(=O)OC2=CC(=C(C=C21)O)OCCN(C)C(C)C(=S)N(C)C(C)C(=O)O
+
+Total molecules accepted: 1/2
+Writing to file ./generated_mols_with_properties.jsonl
+Updating database...
+Database updated.
+
+------------ Iteration 2 ------------
+Current constraints:-
+docking_score: [4.5, inf]
+molecular_weight: [200, 700]
+logp: [0, 5]
+sas: [0, 5]
+substructure: C1=CC(=O)OC2=CC(=C(C=C21)O)O
+------------ Sample 1 ------------
+Sampled molecule: C1=CC=C(C(=C1)C2NC(=O)C(=C(S2)NC3=CC=CC=C3Cl)C#N)O
+Molecule: C1=CC(=O)OC2=CC(=C(C=C21)O)OCC(=O)N(C)C(=O)C(C)C(=O)O has a valid SMILES string
+New molecule generated: C1=CC(=O)OC2=CC(=C(C=C21)O)OCC(=O)N(C)C(=O)C(C)C(=O)O
+
+------------ Sample 2 ------------
+Sampled molecule: [B-](C1CCCN1C(=O)C(C(C)C)N)(O)(O)O
+Molecule: C1=CC(=O)OC2=CC(=C(C=C21)O)OCC(C)C(=O)N(C)C(=O)C(C)C(=O)O has a valid SMILES string
+New molecule generated: C1=CC(=O)OC2=CC(=C(C=C21)O)OCC(C)C(=O)N(C)C(=O)C(C)C(=O)O
+
+------------ Sample 3 ------------
+Sampled molecule: C1[C@H](COC2=C1C=C(C=C2F)F)N3C(=CNC3=S)CCNCC4=CC=CC=C4
+Molecule: C1=CC(=O)OC2=CC(=C(C=C21)O)OCCN(C)C(C)C(=O)N(C)C(=O)C(C)C(=O)O has a valid SMILES string
+Duplicate molecule generated. Skippping...
+
+Total unique molecules generated: 2
+Calculating Docking Score...
+Substructure match not found. Using default values: True
+Docking Score: 4.50090, Molecular weight: 377.34900
+New molecule satisfies constraints: C1=CC(=O)OC2=CC(=C(C=C21)O)OCC(C)C(=O)N(C)C(=O)C(C)C(=O)O
+
+Calculating Docking Score...
+Substructure match not found. Using default values: True
+Docking Score: 5.52574, Molecular weight: 349.29500
+New molecule satisfies constraints: C1=CC(=O)OC2=CC(=C(C=C21)O)OCC(=O)N(C)C(=O)C(C)C(=O)O
+
+Total molecules accepted: 2/2
+Writing to file ./generated_mols_with_properties.jsonl
+Updating database...
+Database updated.
+
+--------- Validating Database ---------
+Molecule: C1[C@H](COC2=C1C=C(C=C2F)F)N3C(=CNC3=S)CCN has a valid SMILES string
+No docking score found. Getting molecule's properties...
+Calculating Docking Score...
+Substructure match not found. Using default values: True
+Docking Score: 5.83886, Molecular weight: 311.35700
+C1[C@H](COC2=C1C=C(C=C2F)F)N3C(=CNC3=S)CCN passed validation. Label=1...
+
+Molecule: C1=CC(=C(C=C1CCN)O)O has a valid SMILES string
+No docking score found. Getting molecule's properties...
+Calculating Docking Score...
+Substructure match not found. Using default values: True
+Docking Score: 4.87022, Molecular weight: 153.18100
+Docking score: 4.870221471847697 not within threshold
+Molecular Weight: 153.181 not within threshold
+C1=CC(=C(C=C1CCN)O)O failed validation. Label=0...
+
+Molecule: CCN(CC)C(=S)SSC(=S)N(CC)CC has a valid SMILES string
+No docking score found. Getting molecule's properties...
+Calculating Docking Score...
+Substructure match not found. Using default values: True
+Docking Score: 5.87853, Molecular weight: 296.55200
+CCN(CC)C(=S)SSC(=S)N(CC)CC passed validation. Label=1...
+
+Molecule: C1=CC=C(C(=C1)C2NC(=O)C(=C(S2)NC3=CC=CC=C3Cl)C#N)O has a valid SMILES string
+No docking score found. Getting molecule's properties...
+Calculating Docking Score...
+Substructure match not found. Using default values: True
+Docking Score: 5.63800, Molecular weight: 357.82200
+C1=CC=C(C(=C1)C2NC(=O)C(=C(S2)NC3=CC=CC=C3Cl)C#N)O passed validation. Label=1...
+
+Molecule: CN1C2=C(C(=S)N(C1=O)C)NC(=N2)SCCN3CCCC3 has a valid SMILES string
+No docking score found. Getting molecule's properties...
+Calculating Docking Score...
+Substructure match not found. Using default values: True
+Docking Score: 4.22034, Molecular weight: 325.46300
+Docking score: 4.220337369074289 not within threshold
+CN1C2=C(C(=S)N(C1=O)C)NC(=N2)SCCN3CCCC3 failed validation. Label=0...
+
+Molecule: C1=CC=C2C(=C1)C=C(N=C2N=C(C3=CC=CC=N3)N)C4=CC=CC=N4 has a valid SMILES string
+No docking score found. Getting molecule's properties...
+Calculating Docking Score...
+Substructure match not found. Using default values: True
+Docking Score: 5.51827, Molecular weight: 325.37500
+C1=CC=C2C(=C1)C=C(N=C2N=C(C3=CC=CC=N3)N)C4=CC=CC=N4 passed validation. Label=1...
+
+Molecule: CN1C2=C(C(=S)N(C1=O)C)NC(=N2)SCCN3CCCC3 has a valid SMILES string
+No docking score found. Getting molecule's properties...
+Calculating Docking Score...
+Substructure match not found. Using default values: True
+Docking Score: 5.14480, Molecular weight: 325.46300
+CN1C2=C(C(=S)N(C1=O)C)NC(=N2)SCCN3CCCC3 passed validation. Label=1...
+
+Molecule: CN1CCN(CC1)C2CC3=CC=CC=C3SC4=C2C=C(C=C4)SC.C(=CC(=O)O)C(=O)O has a valid SMILES string
+No docking score found. Getting molecule's properties...
+Calculating Docking Score...
+Substructure match not found. Using default values: True
+Docking Score: 4.50039, Molecular weight: 472.63200
+Docking score: 4.500392435790581 not within threshold
+CN1CCN(CC1)C2CC3=CC=CC=C3SC4=C2C=C(C=C4)SC.C(=CC(=O)O)C(=O)O failed validation. Label=0...
+
+CC(C)C1=CC2=C(C=C1)C3(CCCC(C3CC2(C)CN)C.C1=CC=C(C=C1)C(=O)O is not a valid SMILES string. Removing...
+
+Molecule: CC1=CC=C(C=C1)N2CCN(CC2)CC(COC3=CC=CC4=CC=CC=C43)O has a valid SMILES string
+No docking score found. Getting molecule's properties...
+Calculating Docking Score...
+Substructure match not found. Using default values: True
+Docking Score: 5.56972, Molecular weight: 376.50000
+CC1=CC=C(C=C1)N2CCN(CC2)CC(COC3=CC=CC4=CC=CC=C43)O passed validation. Label=1...
+
+Molecule: CCCC1=NC(=NC(=N1)NC(=O)C2=CC=CC=C2)NC(=O)C3=CC=CC=C3 has a valid SMILES string
+No docking score found. Getting molecule's properties...
+Calculating Docking Score...
+Substructure match not found. Using default values: True
+Docking Score: 5.70455, Molecular weight: 361.40500
+CCCC1=NC(=NC(=N1)NC(=O)C2=CC=CC=C2)NC(=O)C3=CC=CC=C3 passed validation. Label=1...
+
+Molecule: C1CNC2CCNC3N2C1NCC3 has a valid SMILES string
+No docking score found. Getting molecule's properties...
+Calculating Docking Score...
+Substructure match not found. Using default values: True
+Docking Score: 5.45472, Molecular weight: 182.27100
+Molecular Weight: 182.27100000000002 not within threshold
+C1CNC2CCNC3N2C1NCC3 failed validation. Label=0...
+
+Molecule: C1C(SC2=CC=CC=C2N=C1C3=CC=CC=C3)C4=CC=C(C=C4)[N+](=O)[O-] has a valid SMILES string
+No docking score found. Getting molecule's properties...
+Calculating Docking Score...
+Substructure match not found. Using default values: True
+Docking Score: 6.29971, Molecular weight: 360.43800
+C1C(SC2=CC=CC=C2N=C1C3=CC=CC=C3)C4=CC=C(C=C4)[N+](=O)[O-] passed validation. Label=1...
+
+Molecule: CC1=CC=C(C=C1)C2=NC3=CC=CC=C3SC(C2)C4=CC(=CC=C4)[N+](=O)[O-] has a valid SMILES string
+No docking score found. Getting molecule's properties...
+Calculating Docking Score...
+Substructure match not found. Using default values: True
+Docking Score: 5.79041, Molecular weight: 374.46500
+CC1=CC=C(C=C1)C2=NC3=CC=CC=C3SC(C2)C4=CC(=CC=C4)[N+](=O)[O-] passed validation. Label=1...
+
+Molecule: CC(C1=CC=CC=C1)(C(C2CCCCN2)C3=CC=CC=C3)O has a valid SMILES string
+No docking score found. Getting molecule's properties...
+Calculating Docking Score...
+Substructure match not found. Using default values: True
+Docking Score: 5.04307, Molecular weight: 295.42600
+CC(C1=CC=CC=C1)(C(C2CCCCN2)C3=CC=CC=C3)O passed validation. Label=1...
+
+Molecule: C1[C@H](COC2=C1C=C(C=C2F)F)N3C(=CNC3=S)CCN has a valid SMILES string
+No docking score found. Getting molecule's properties...
+Calculating Docking Score...
+Substructure match not found. Using default values: True
+Docking Score: 5.56386, Molecular weight: 311.35700
+C1[C@H](COC2=C1C=C(C=C2F)F)N3C(=CNC3=S)CCN passed validation. Label=1...
+
+Molecule: [B-](C1CCCN1C(=O)C(C(C)C)N)(O)(O)O has a valid SMILES string
+No docking score found. Getting molecule's properties...
+Calculating Docking Score...
+Substructure match not found. Using default values: True
+Docking Score: 4.16317, Molecular weight: 231.08100
+Docking score: 4.163171071967037 not within threshold
+[B-](C1CCCN1C(=O)C(C(C)C)N)(O)(O)O failed validation. Label=0...
+
+Molecule: OC1=C(O)C=C(OC(C=C2C)=O)C2=C1 has a valid SMILES string
+No docking score found. Getting molecule's properties...
+Calculating Docking Score...
+Substructure match not found. Using default values: True
+Docking Score: 4.47771, Molecular weight: 192.17000
+Docking score: 4.477714669682074 not within threshold
+Molecular Weight: 192.16999999999996 not within threshold
+OC1=C(O)C=C(OC(C=C2C)=O)C2=C1 failed validation. Label=0...
+
+Molecule: OC1=C(O)C(CCCCCCC)=NC2=CC=CC=C12 has a valid SMILES string
+No docking score found. Getting molecule's properties...
+Calculating Docking Score...
+Substructure match not found. Using default values: True
+Docking Score: 4.64260, Molecular weight: 259.34900
+Docking score: 4.642596819610421 not within threshold
+OC1=C(O)C(CCCCCCC)=NC2=CC=CC=C12 failed validation. Label=0...
+
+Molecule: CCCCCCCC1=NC2=CC=CC=C2C(O)=C1 has a valid SMILES string
+No docking score found. Getting molecule's properties...
+Calculating Docking Score...
+Substructure match not found. Using default values: True
+Docking Score: 5.57660, Molecular weight: 243.35000
+CCCCCCCC1=NC2=CC=CC=C2C(O)=C1 passed validation. Label=1...
+
+Molecule: OC1=C2N=CC=CC2=CC=C1 has a valid SMILES string
+No docking score found. Getting molecule's properties...
+Calculating Docking Score...
+Substructure match not found. Using default values: True
+Docking Score: 5.13365, Molecular weight: 145.16100
+Molecular Weight: 145.16099999999997 not within threshold
+OC1=C2N=CC=CC2=CC=C1 failed validation. Label=0...
+
+Molecule: [C]C1=[C]C(=O)OC2=C1[C]=C(C(=[C]2)O[C][C][C]([C])C(=O)[N]C1=[C][C]=C([C]=[C]1)N1[C][C][C][C][C]1)[O] has a valid SMILES string
+No docking score found. Getting molecule's properties...
+Calculating Docking Score...
+Substructure match not found. Using default values: True
+Docking Score: 5.47268, Molecular weight: 420.29500
+[C]C1=[C]C(=O)OC2=C1[C]=C(C(=[C]2)O[C][C][C]([C])C(=O)[N]C1=[C][C]=C([C]=[C]1)N1[C][C][C][C][C]1)[O] passed validation. Label=1...
+
+Molecule: O=C1[C]=[C]C2=C([C]=C(C(=[C]2)[O])OC2=[C][C]=C(N3[C]=NC4=C([C]=[C][C]=[C]4)C3=O)[C]=[C]2)O1 has a valid SMILES string
+No docking score found. Getting molecule's properties...
+Calculating Docking Score...
+Substructure match not found. Using default values: True
+Docking Score: 4.75349, Molecular weight: 384.26200
+Docking score: 4.753493940898542 not within threshold
+O=C1[C]=[C]C2=C([C]=C(C(=[C]2)[O])OC2=[C][C]=C(N3[C]=NC4=C([C]=[C][C]=[C]4)C3=O)[C]=[C]2)O1 failed validation. Label=0...
+
+Molecule: CCN(CC)C(=S)SSC(=S)N(CC)CC has a valid SMILES string
+No docking score found. Getting molecule's properties...
+Calculating Docking Score...
+Substructure match not found. Using default values: True
+Docking Score: 4.62180, Molecular weight: 296.55200
+Docking score: 4.621796293595669 not within threshold
+CCN(CC)C(=S)SSC(=S)N(CC)CC failed validation. Label=0...
+
+Molecule: C1CC2=C(C=C(C=C2C[C@H]1N3C(=CNC3=S)CN)F)F.Cl has a valid SMILES string
+No docking score found. Getting molecule's properties...
+Calculating Docking Score...
+Substructure match not found. Using default values: True
+Docking Score: 5.80049, Molecular weight: 331.81900
+C1CC2=C(C=C(C=C2C[C@H]1N3C(=CNC3=S)CN)F)F.Cl passed validation. Label=1...
+
+Molecule: C1[C@H](COC2=C1C=C(C=C2F)F)N3C(=CNC3=S)CCN has a valid SMILES string
+No docking score found. Getting molecule's properties...
+Calculating Docking Score...
+Substructure match not found. Using default values: True
+Docking Score: 4.77867, Molecular weight: 311.35700
+Docking score: 4.778674436453089 not within threshold
+C1[C@H](COC2=C1C=C(C=C2F)F)N3C(=CNC3=S)CCN failed validation. Label=0...
+
+Molecule: C1[C@H](COC2=C1C=C(C=C2F)F)N3C(=CNC3=S)CCNCC4=CC=CC=C4 has a valid SMILES string
+No docking score found. Getting molecule's properties...
+Calculating Docking Score...
+Substructure match not found. Using default values: True
+Docking Score: 5.44442, Molecular weight: 401.48200
+C1[C@H](COC2=C1C=C(C=C2F)F)N3C(=CNC3=S)CCNCC4=CC=CC=C4 passed validation. Label=1...
+
+Molecule: C1=CC(=O)OC2=CC(=C(C=C21)O)OCCN(C)C(C)C(=O)N(C)C(=O)C(C)C(=O)O has a valid SMILES string
+Substructure match not found. Using default values: True
+Docking Score: 5.73354, Molecular weight: 420.41800
+C1=CC(=O)OC2=CC(=C(C=C21)O)OCCN(C)C(C)C(=O)N(C)C(=O)C(C)C(=O)O passed validation. Label=1...
+
+Molecule: C1=CC(=O)OC2=CC(=C(C=C21)O)OCC(C)C(=O)N(C)C(=O)C(C)C(=O)O has a valid SMILES string
+Substructure match not found. Using default values: True
+Docking Score: 4.50090, Molecular weight: 377.34900
+Docking score: 4.500897042284008 not within threshold
+C1=CC(=O)OC2=CC(=C(C=C21)O)OCC(C)C(=O)N(C)C(=O)C(C)C(=O)O failed validation. Label=0...
+
+Molecule: C1=CC(=O)OC2=CC(=C(C=C21)O)OCC(=O)N(C)C(=O)C(C)C(=O)O has a valid SMILES string
+Substructure match not found. Using default values: True
+Docking Score: 5.52574, Molecular weight: 349.29500
+C1=CC(=O)OC2=CC(=C(C=C21)O)OCC(=O)N(C)C(=O)C(C)C(=O)O passed validation. Label=1...
+
+------------ Database Validated ------------
+
+------------ Iteration 3 ------------
+Current constraints:-
+docking_score: [5.0, inf]
+molecular_weight: [200, 700]
+logp: [0, 5]
+sas: [0, 5]
+substructure: C1=CC(=O)OC2=CC(=C(C=C21)O)O
+------------ Sample 1 ------------
+Sampled molecule: [C]C1=[C]C(=O)OC2=C1[C]=C(C(=[C]2)O[C][C][C]([C])C(=O)[N]C1=[C][C]=C([C]=[C]1)N1[C][C][C][C][C]1)[O]
+Molecule: C1=CC(=O)OC2=CC(=C(C=C21)O)OCC(=O)N(C)C(=O)C(C)C(=O)O has a valid SMILES string
+Duplicate molecule generated. Skippping...
+
+------------ Sample 2 ------------
+Sampled molecule: [C]C1=[C]C(=O)OC2=C1[C]=C(C(=[C]2)O[C][C][C]([C])C(=O)[N]C1=[C][C]=C([C]=[C]1)N1[C][C][C][C][C]1)[O]
+Molecule: C1=CC(=O)OC2=CC(=C(C=C21)O)OCC(C)N(C)C(=O)C(C)C(=O)O has a valid SMILES string
+New molecule generated: C1=CC(=O)OC2=CC(=C(C=C21)O)OCC(C)N(C)C(=O)C(C)C(=O)O
+
+------------ Sample 3 ------------
+Sampled molecule: C1=CC(=O)OC2=CC(=C(C=C21)O)OCCN(C)C(C)C(=O)N(C)C(=O)C(C)C(=O)O
+Molecule: C1=CC(=O)OC2=CC(=C(C=C21)O)OCC(=O)N(C)C(C)C(=O)N(C)C(=O)C(C)C(=O)O has a valid SMILES string
+New molecule generated: C1=CC(=O)OC2=CC(=C(C=C21)O)OCC(=O)N(C)C(C)C(=O)N(C)C(=O)C(C)C(=O)O
+
+Total unique molecules generated: 2
+Calculating Docking Score...
+Substructure match not found. Using default values: True
+Docking Score: 4.13534, Molecular weight: 434.40100
+Docking score: 4.13534316474512 not within threshold
+New molecule does not satisfy constraints: C1=CC(=O)OC2=CC(=C(C=C21)O)OCC(=O)N(C)C(C)C(=O)N(C)C(=O)C(C)C(=O)O
+
+Calculating Docking Score...
+Substructure match not found. Using default values: True
+Docking Score: 6.14912, Molecular weight: 349.33900
+New molecule satisfies constraints: C1=CC(=O)OC2=CC(=C(C=C21)O)OCC(C)N(C)C(=O)C(C)C(=O)O
+
+Total molecules accepted: 1/2
+Writing to file ./generated_mols_with_properties.jsonl
+Updating database...
+Database updated.
+
+------------ Iteration 4 ------------
+Current constraints:-
+docking_score: [5.0, inf]
+molecular_weight: [200, 700]
+logp: [0, 5]
+sas: [0, 5]
+substructure: C1=CC(=O)OC2=CC(=C(C=C21)O)O
+------------ Sample 1 ------------
+Sampled molecule: C1CC2=C(C=C(C=C2C[C@H]1N3C(=CNC3=S)CN)F)F.Cl
+Invalid molecule generated. Skippping...
+
+------------ Sample 2 ------------
+Sampled molecule: C1=CC(=O)OC2=CC(=C(C=C21)O)OCCN(C)C(C)C(=O)N(C)C(=O)C(C)C(=O)O
+Invalid molecule generated. Skippping...
+
+------------ Sample 3 ------------
+Sampled molecule: [C]C1=[C]C(=O)OC2=C1[C]=C(C(=[C]2)O[C][C][C]([C])C(=O)[N]C1=[C][C]=C([C]=[C]1)N1[C][C][C][C][C]1)[O]
+Molecule: C1=CC(=O)OC2=CC(=C(C=C21)O)OCC(C)C(=O)N(C)C(=O)C(C)C(=O)C(C)C(=O)O has a valid SMILES string
+New molecule generated: C1=CC(=O)OC2=CC(=C(C=C21)O)OCC(C)C(=O)N(C)C(=O)C(C)C(=O)C(C)C(=O)O
+
+Total unique molecules generated: 1
+Calculating Docking Score...
+Substructure match not found. Using default values: True
+Docking Score: 5.96047, Molecular weight: 433.41300
+New molecule satisfies constraints: C1=CC(=O)OC2=CC(=C(C=C21)O)OCC(C)C(=O)N(C)C(=O)C(C)C(=O)C(C)C(=O)O
+
+Total molecules accepted: 1/1
+Writing to file ./generated_mols_with_properties.jsonl
+Updating database...
+Database updated.
+
+--------- Validating Database ---------
+Molecule: C1[C@H](COC2=C1C=C(C=C2F)F)N3C(=CNC3=S)CCN has a valid SMILES string
+Substructure match not found. Using default values: True
+Docking Score: 5.83886, Molecular weight: 311.35700
+C1[C@H](COC2=C1C=C(C=C2F)F)N3C(=CNC3=S)CCN passed validation. Label=1...
+
+Molecule: C1=CC(=C(C=C1CCN)O)O has a valid SMILES string
+Substructure match not found. Using default values: True
+Docking Score: 4.87022, Molecular weight: 153.18100
+Docking score: 4.870221471847697 not within threshold
+Molecular Weight: 153.181 not within threshold
+C1=CC(=C(C=C1CCN)O)O failed validation. Label=0...
+
+Molecule: CCN(CC)C(=S)SSC(=S)N(CC)CC has a valid SMILES string
+Substructure match not found. Using default values: True
+Docking Score: 5.87853, Molecular weight: 296.55200
+CCN(CC)C(=S)SSC(=S)N(CC)CC passed validation. Label=1...
+
+Molecule: C1=CC=C(C(=C1)C2NC(=O)C(=C(S2)NC3=CC=CC=C3Cl)C#N)O has a valid SMILES string
+Substructure match not found. Using default values: True
+Docking Score: 5.63800, Molecular weight: 357.82200
+C1=CC=C(C(=C1)C2NC(=O)C(=C(S2)NC3=CC=CC=C3Cl)C#N)O passed validation. Label=1...
+
+Molecule: CN1C2=C(C(=S)N(C1=O)C)NC(=N2)SCCN3CCCC3 has a valid SMILES string
+Substructure match not found. Using default values: True
+Docking Score: 4.22034, Molecular weight: 325.46300
+Docking score: 4.220337369074289 not within threshold
+CN1C2=C(C(=S)N(C1=O)C)NC(=N2)SCCN3CCCC3 failed validation. Label=0...
+
+Molecule: C1=CC=C2C(=C1)C=C(N=C2N=C(C3=CC=CC=N3)N)C4=CC=CC=N4 has a valid SMILES string
+Substructure match not found. Using default values: True
+Docking Score: 5.51827, Molecular weight: 325.37500
+C1=CC=C2C(=C1)C=C(N=C2N=C(C3=CC=CC=N3)N)C4=CC=CC=N4 passed validation. Label=1...
+
+Molecule: CN1C2=C(C(=S)N(C1=O)C)NC(=N2)SCCN3CCCC3 has a valid SMILES string
+Substructure match not found. Using default values: True
+Docking Score: 5.14480, Molecular weight: 325.46300
+Docking score: 5.14479837810505 not within threshold
+CN1C2=C(C(=S)N(C1=O)C)NC(=N2)SCCN3CCCC3 failed validation. Label=0...
+
+Molecule: CN1CCN(CC1)C2CC3=CC=CC=C3SC4=C2C=C(C=C4)SC.C(=CC(=O)O)C(=O)O has a valid SMILES string
+Substructure match not found. Using default values: True
+Docking Score: 4.50039, Molecular weight: 472.63200
+Docking score: 4.500392435790581 not within threshold
+CN1CCN(CC1)C2CC3=CC=CC=C3SC4=C2C=C(C=C4)SC.C(=CC(=O)O)C(=O)O failed validation. Label=0...
+
+Molecule: CC1=CC=C(C=C1)N2CCN(CC2)CC(COC3=CC=CC4=CC=CC=C43)O has a valid SMILES string
+Substructure match not found. Using default values: True
+Docking Score: 5.56972, Molecular weight: 376.50000
+CC1=CC=C(C=C1)N2CCN(CC2)CC(COC3=CC=CC4=CC=CC=C43)O passed validation. Label=1...
+
+Molecule: CCCC1=NC(=NC(=N1)NC(=O)C2=CC=CC=C2)NC(=O)C3=CC=CC=C3 has a valid SMILES string
+Substructure match not found. Using default values: True
+Docking Score: 5.70455, Molecular weight: 361.40500
+CCCC1=NC(=NC(=N1)NC(=O)C2=CC=CC=C2)NC(=O)C3=CC=CC=C3 passed validation. Label=1...
+
+Molecule: C1CNC2CCNC3N2C1NCC3 has a valid SMILES string
+Substructure match not found. Using default values: True
+Docking Score: 5.45472, Molecular weight: 182.27100
+Docking score: 5.4547155957548386 not within threshold
+Molecular Weight: 182.27100000000002 not within threshold
+C1CNC2CCNC3N2C1NCC3 failed validation. Label=0...
+
+Molecule: C1C(SC2=CC=CC=C2N=C1C3=CC=CC=C3)C4=CC=C(C=C4)[N+](=O)[O-] has a valid SMILES string
+Substructure match not found. Using default values: True
+Docking Score: 6.29971, Molecular weight: 360.43800
+C1C(SC2=CC=CC=C2N=C1C3=CC=CC=C3)C4=CC=C(C=C4)[N+](=O)[O-] passed validation. Label=1...
+
+Molecule: CC1=CC=C(C=C1)C2=NC3=CC=CC=C3SC(C2)C4=CC(=CC=C4)[N+](=O)[O-] has a valid SMILES string
+Substructure match not found. Using default values: True
+Docking Score: 5.79041, Molecular weight: 374.46500
+CC1=CC=C(C=C1)C2=NC3=CC=CC=C3SC(C2)C4=CC(=CC=C4)[N+](=O)[O-] passed validation. Label=1...
+
+Molecule: CC(C1=CC=CC=C1)(C(C2CCCCN2)C3=CC=CC=C3)O has a valid SMILES string
+Substructure match not found. Using default values: True
+Docking Score: 5.04307, Molecular weight: 295.42600
+Docking score: 5.0430663891037675 not within threshold
+CC(C1=CC=CC=C1)(C(C2CCCCN2)C3=CC=CC=C3)O failed validation. Label=0...
+
+Molecule: C1[C@H](COC2=C1C=C(C=C2F)F)N3C(=CNC3=S)CCN has a valid SMILES string
+Substructure match not found. Using default values: True
+Docking Score: 5.56386, Molecular weight: 311.35700
+C1[C@H](COC2=C1C=C(C=C2F)F)N3C(=CNC3=S)CCN passed validation. Label=1...
+
+Molecule: [B-](C1CCCN1C(=O)C(C(C)C)N)(O)(O)O has a valid SMILES string
+Substructure match not found. Using default values: True
+Docking Score: 4.16317, Molecular weight: 231.08100
+Docking score: 4.163171071967037 not within threshold
+[B-](C1CCCN1C(=O)C(C(C)C)N)(O)(O)O failed validation. Label=0...
+
+Molecule: OC1=C(O)C=C(OC(C=C2C)=O)C2=C1 has a valid SMILES string
+Substructure match not found. Using default values: True
+Docking Score: 4.47771, Molecular weight: 192.17000
+Docking score: 4.477714669682074 not within threshold
+Molecular Weight: 192.16999999999996 not within threshold
+OC1=C(O)C=C(OC(C=C2C)=O)C2=C1 failed validation. Label=0...
+
+Molecule: OC1=C(O)C(CCCCCCC)=NC2=CC=CC=C12 has a valid SMILES string
+Substructure match not found. Using default values: True
+Docking Score: 4.64260, Molecular weight: 259.34900
+Docking score: 4.642596819610421 not within threshold
+OC1=C(O)C(CCCCCCC)=NC2=CC=CC=C12 failed validation. Label=0...
+
+Molecule: CCCCCCCC1=NC2=CC=CC=C2C(O)=C1 has a valid SMILES string
+Substructure match not found. Using default values: True
+Docking Score: 5.57660, Molecular weight: 243.35000
+CCCCCCCC1=NC2=CC=CC=C2C(O)=C1 passed validation. Label=1...
+
+Molecule: OC1=C2N=CC=CC2=CC=C1 has a valid SMILES string
+Substructure match not found. Using default values: True
+Docking Score: 5.13365, Molecular weight: 145.16100
+Docking score: 5.13365392286032 not within threshold
+Molecular Weight: 145.16099999999997 not within threshold
+OC1=C2N=CC=CC2=CC=C1 failed validation. Label=0...
+
+Molecule: [C]C1=[C]C(=O)OC2=C1[C]=C(C(=[C]2)O[C][C][C]([C])C(=O)[N]C1=[C][C]=C([C]=[C]1)N1[C][C][C][C][C]1)[O] has a valid SMILES string
+Substructure match not found. Using default values: True
+Docking Score: 5.47268, Molecular weight: 420.29500
+Docking score: 5.472676657854575 not within threshold
+[C]C1=[C]C(=O)OC2=C1[C]=C(C(=[C]2)O[C][C][C]([C])C(=O)[N]C1=[C][C]=C([C]=[C]1)N1[C][C][C][C][C]1)[O] failed validation. Label=0...
+
+Molecule: O=C1[C]=[C]C2=C([C]=C(C(=[C]2)[O])OC2=[C][C]=C(N3[C]=NC4=C([C]=[C][C]=[C]4)C3=O)[C]=[C]2)O1 has a valid SMILES string
+Substructure match not found. Using default values: True
+Docking Score: 4.75349, Molecular weight: 384.26200
+Docking score: 4.753493940898542 not within threshold
+O=C1[C]=[C]C2=C([C]=C(C(=[C]2)[O])OC2=[C][C]=C(N3[C]=NC4=C([C]=[C][C]=[C]4)C3=O)[C]=[C]2)O1 failed validation. Label=0...
+
+Molecule: CCN(CC)C(=S)SSC(=S)N(CC)CC has a valid SMILES string
+Substructure match not found. Using default values: True
+Docking Score: 4.62180, Molecular weight: 296.55200
+Docking score: 4.621796293595669 not within threshold
+CCN(CC)C(=S)SSC(=S)N(CC)CC failed validation. Label=0...
+
+Molecule: C1CC2=C(C=C(C=C2C[C@H]1N3C(=CNC3=S)CN)F)F.Cl has a valid SMILES string
+Substructure match not found. Using default values: True
+Docking Score: 5.80049, Molecular weight: 331.81900
+C1CC2=C(C=C(C=C2C[C@H]1N3C(=CNC3=S)CN)F)F.Cl passed validation. Label=1...
+
+Molecule: C1[C@H](COC2=C1C=C(C=C2F)F)N3C(=CNC3=S)CCN has a valid SMILES string
+Substructure match not found. Using default values: True
+Docking Score: 4.77867, Molecular weight: 311.35700
+Docking score: 4.778674436453089 not within threshold
+C1[C@H](COC2=C1C=C(C=C2F)F)N3C(=CNC3=S)CCN failed validation. Label=0...
+
+Molecule: C1[C@H](COC2=C1C=C(C=C2F)F)N3C(=CNC3=S)CCNCC4=CC=CC=C4 has a valid SMILES string
+Substructure match not found. Using default values: True
+Docking Score: 5.44442, Molecular weight: 401.48200
+Docking score: 5.444421072375876 not within threshold
+C1[C@H](COC2=C1C=C(C=C2F)F)N3C(=CNC3=S)CCNCC4=CC=CC=C4 failed validation. Label=0...
+
+Molecule: C1=CC(=O)OC2=CC(=C(C=C21)O)OCCN(C)C(C)C(=O)N(C)C(=O)C(C)C(=O)O has a valid SMILES string
+Substructure match not found. Using default values: True
+Docking Score: 5.73354, Molecular weight: 420.41800
+C1=CC(=O)OC2=CC(=C(C=C21)O)OCCN(C)C(C)C(=O)N(C)C(=O)C(C)C(=O)O passed validation. Label=1...
+
+Molecule: C1=CC(=O)OC2=CC(=C(C=C21)O)OCC(C)C(=O)N(C)C(=O)C(C)C(=O)O has a valid SMILES string
+Substructure match not found. Using default values: True
+Docking Score: 4.50090, Molecular weight: 377.34900
+Docking score: 4.500897042284008 not within threshold
+C1=CC(=O)OC2=CC(=C(C=C21)O)OCC(C)C(=O)N(C)C(=O)C(C)C(=O)O failed validation. Label=0...
+
+Molecule: C1=CC(=O)OC2=CC(=C(C=C21)O)OCC(=O)N(C)C(=O)C(C)C(=O)O has a valid SMILES string
+Substructure match not found. Using default values: True
+Docking Score: 5.52574, Molecular weight: 349.29500
+C1=CC(=O)OC2=CC(=C(C=C21)O)OCC(=O)N(C)C(=O)C(C)C(=O)O passed validation. Label=1...
+
+Molecule: C1=CC(=O)OC2=CC(=C(C=C21)O)OCC(C)N(C)C(=O)C(C)C(=O)O has a valid SMILES string
+Substructure match not found. Using default values: True
+Docking Score: 6.14912, Molecular weight: 349.33900
+C1=CC(=O)OC2=CC(=C(C=C21)O)OCC(C)N(C)C(=O)C(C)C(=O)O passed validation. Label=1...
+
+Molecule: C1=CC(=O)OC2=CC(=C(C=C21)O)OCC(C)C(=O)N(C)C(=O)C(C)C(=O)C(C)C(=O)O has a valid SMILES string
+Substructure match not found. Using default values: True
+Docking Score: 5.96047, Molecular weight: 433.41300
+C1=CC(=O)OC2=CC(=C(C=C21)O)OCC(C)C(=O)N(C)C(=O)C(C)C(=O)C(C)C(=O)O passed validation. Label=1...
+
+------------ Database Validated ------------
+
+------------ Iteration 5 ------------
+Current constraints:-
+docking_score: [5.5, inf]
+molecular_weight: [200, 700]
+logp: [0, 5]
+sas: [0, 5]
+substructure: C1=CC(=O)OC2=CC(=C(C=C21)O)O
+------------ Sample 1 ------------
+Sampled molecule: C1=CC=C2C(=C1)C=C(N=C2N=C(C3=CC=CC=N3)N)C4=CC=CC=N4
+Molecule: C1=CC(=O)OC2=CC(=C(C=C21)O)OCC=C(C)C(=O)N(C)C(=O)C(C)C(=O)O has a valid SMILES string
+New molecule generated: C1=CC(=O)OC2=CC(=C(C=C21)O)OCC=C(C)C(=O)N(C)C(=O)C(C)C(=O)O
+
+------------ Sample 2 ------------
+Sampled molecule: CC1=CC=C(C=C1)N2CCN(CC2)CC(COC3=CC=CC4=CC=CC=C43)O
+Molecule: C1=CC(=O)OC2=CC(=C(C=C21)O)OCC(C)NC(=O)C(C)C(=O)O has a valid SMILES string
+New molecule generated: C1=CC(=O)OC2=CC(=C(C=C21)O)OCC(C)NC(=O)C(C)C(=O)O
+
+------------ Sample 3 ------------
+Sampled molecule: C1=CC(=O)OC2=CC(=C(C=C21)O)OCC(C)C(=O)N(C)C(=O)C(C)C(=O)C(C)C(=O)O
+Molecule: C1=CC(=O)OC2=CC(=C(C=C21)O)OCC(C)C(=O)N(C)C(=O)C(C)C(=O)C(C)C(=O)O has a valid SMILES string
+Duplicate molecule generated. Skippping...
+
+Total unique molecules generated: 2
+Calculating Docking Score...
+Substructure match not found. Using default values: True
+Docking Score: 5.43733, Molecular weight: 389.36000
+Docking score: 5.437329825923343 not within threshold
+New molecule does not satisfy constraints: C1=CC(=O)OC2=CC(=C(C=C21)O)OCC=C(C)C(=O)N(C)C(=O)C(C)C(=O)O
+
+Calculating Docking Score...
+Substructure match not found. Using default values: True
+Docking Score: 4.44425, Molecular weight: 335.31200
+Docking score: 4.444250864401839 not within threshold
+New molecule does not satisfy constraints: C1=CC(=O)OC2=CC(=C(C=C21)O)OCC(C)NC(=O)C(C)C(=O)O
+
+Total molecules accepted: 0/2
+Writing to file ./generated_mols_with_properties.jsonl
+Updating database...
+Database updated.
+
+------------ Iteration 6 ------------
+Current constraints:-
+docking_score: [5.5, inf]
+molecular_weight: [200, 700]
+logp: [0, 5]
+sas: [0, 5]
+substructure: C1=CC(=O)OC2=CC(=C(C=C21)O)O
+------------ Sample 1 ------------
+Sampled molecule: C1[C@H](COC2=C1C=C(C=C2F)F)N3C(=CNC3=S)CCN
+Molecule: C1=CC(=O)OC2=CC(=C(C=C21)O)OC(C)C(=O)N(C)C(=O)C(C)C(=O)O has a valid SMILES string
+New molecule generated: C1=CC(=O)OC2=CC(=C(C=C21)O)OC(C)C(=O)N(C)C(=O)C(C)C(=O)O
+
+------------ Sample 2 ------------
+Sampled molecule: CCN(CC)C(=S)SSC(=S)N(CC)CC
+Molecule: C1=CC(=O)OC2=CC(=C(C=C21)O)OCCN(C)C(=O)C(C)C(=O)N(C)C(=O)O has a valid SMILES string
+New molecule generated: C1=CC(=O)OC2=CC(=C(C=C21)O)OCCN(C)C(=O)C(C)C(=O)N(C)C(=O)O
+
+------------ Sample 3 ------------
+Sampled molecule: C1=CC=C2C(=C1)C=C(N=C2N=C(C3=CC=CC=N3)N)C4=CC=CC=N4
+Molecule: C1=CC(=O)OC2=CC(=C(C=C21)O)OCC(=O)N(C)C(=O)C(C)C(=O)N(C)C(=O)C(C)C(=O)C has a valid SMILES string
+New molecule generated: C1=CC(=O)OC2=CC(=C(C=C21)O)OCC(=O)N(C)C(=O)C(C)C(=O)N(C)C(=O)C(C)C(=O)C
+
+Total unique molecules generated: 3
+Calculating Docking Score...
+Substructure match not found. Using default values: True
+Docking Score: 6.22201, Molecular weight: 363.32200
+New molecule satisfies constraints: C1=CC(=O)OC2=CC(=C(C=C21)O)OC(C)C(=O)N(C)C(=O)C(C)C(=O)O
+
+Calculating Docking Score...
+Substructure match not found. Using default values: True
+Docking Score: 4.55981, Molecular weight: 392.36400
+Docking score: 4.559807650822123 not within threshold
+New molecule does not satisfy constraints: C1=CC(=O)OC2=CC(=C(C=C21)O)OCCN(C)C(=O)C(C)C(=O)N(C)C(=O)O
+
+Calculating Docking Score...
+Substructure match not found. Using default values: True
+Docking Score: 4.77249, Molecular weight: 460.43900
+Docking score: 4.7724870515998905 not within threshold
+New molecule does not satisfy constraints: C1=CC(=O)OC2=CC(=C(C=C21)O)OCC(=O)N(C)C(=O)C(C)C(=O)N(C)C(=O)C(C)C(=O)C
+
+Total molecules accepted: 1/3
+Writing to file ./generated_mols_with_properties.jsonl
+Updating database...
+Database updated.
+
+--------- Validating Database ---------
+Molecule: C1[C@H](COC2=C1C=C(C=C2F)F)N3C(=CNC3=S)CCN has a valid SMILES string
+Substructure match not found. Using default values: True
+Docking Score: 5.83886, Molecular weight: 311.35700
+C1[C@H](COC2=C1C=C(C=C2F)F)N3C(=CNC3=S)CCN passed validation. Label=1...
+
+Molecule: C1=CC(=C(C=C1CCN)O)O has a valid SMILES string
+Substructure match not found. Using default values: True
+Docking Score: 4.87022, Molecular weight: 153.18100
+Docking score: 4.870221471847697 not within threshold
+Molecular Weight: 153.181 not within threshold
+C1=CC(=C(C=C1CCN)O)O failed validation. Label=0...
+
+Molecule: CCN(CC)C(=S)SSC(=S)N(CC)CC has a valid SMILES string
+Substructure match not found. Using default values: True
+Docking Score: 5.87853, Molecular weight: 296.55200
+CCN(CC)C(=S)SSC(=S)N(CC)CC passed validation. Label=1...
+
+Molecule: C1=CC=C(C(=C1)C2NC(=O)C(=C(S2)NC3=CC=CC=C3Cl)C#N)O has a valid SMILES string
+Substructure match not found. Using default values: True
+Docking Score: 5.63800, Molecular weight: 357.82200
+C1=CC=C(C(=C1)C2NC(=O)C(=C(S2)NC3=CC=CC=C3Cl)C#N)O passed validation. Label=1...
+
+Molecule: CN1C2=C(C(=S)N(C1=O)C)NC(=N2)SCCN3CCCC3 has a valid SMILES string
+Substructure match not found. Using default values: True
+Docking Score: 4.22034, Molecular weight: 325.46300
+Docking score: 4.220337369074289 not within threshold
+CN1C2=C(C(=S)N(C1=O)C)NC(=N2)SCCN3CCCC3 failed validation. Label=0...
+
+Molecule: C1=CC=C2C(=C1)C=C(N=C2N=C(C3=CC=CC=N3)N)C4=CC=CC=N4 has a valid SMILES string
+Substructure match not found. Using default values: True
+Docking Score: 5.51827, Molecular weight: 325.37500
+C1=CC=C2C(=C1)C=C(N=C2N=C(C3=CC=CC=N3)N)C4=CC=CC=N4 passed validation. Label=1...
+
+Molecule: CN1C2=C(C(=S)N(C1=O)C)NC(=N2)SCCN3CCCC3 has a valid SMILES string
+Substructure match not found. Using default values: True
+Docking Score: 5.14480, Molecular weight: 325.46300
+Docking score: 5.14479837810505 not within threshold
+CN1C2=C(C(=S)N(C1=O)C)NC(=N2)SCCN3CCCC3 failed validation. Label=0...
+
+Molecule: CN1CCN(CC1)C2CC3=CC=CC=C3SC4=C2C=C(C=C4)SC.C(=CC(=O)O)C(=O)O has a valid SMILES string
+Substructure match not found. Using default values: True
+Docking Score: 4.50039, Molecular weight: 472.63200
+Docking score: 4.500392435790581 not within threshold
+CN1CCN(CC1)C2CC3=CC=CC=C3SC4=C2C=C(C=C4)SC.C(=CC(=O)O)C(=O)O failed validation. Label=0...
+
+Molecule: CC1=CC=C(C=C1)N2CCN(CC2)CC(COC3=CC=CC4=CC=CC=C43)O has a valid SMILES string
+Substructure match not found. Using default values: True
+Docking Score: 5.56972, Molecular weight: 376.50000
+CC1=CC=C(C=C1)N2CCN(CC2)CC(COC3=CC=CC4=CC=CC=C43)O passed validation. Label=1...
+
+Molecule: CCCC1=NC(=NC(=N1)NC(=O)C2=CC=CC=C2)NC(=O)C3=CC=CC=C3 has a valid SMILES string
+Substructure match not found. Using default values: True
+Docking Score: 5.70455, Molecular weight: 361.40500
+CCCC1=NC(=NC(=N1)NC(=O)C2=CC=CC=C2)NC(=O)C3=CC=CC=C3 passed validation. Label=1...
+
+Molecule: C1CNC2CCNC3N2C1NCC3 has a valid SMILES string
+Substructure match not found. Using default values: True
+Docking Score: 5.45472, Molecular weight: 182.27100
+Docking score: 5.4547155957548386 not within threshold
+Molecular Weight: 182.27100000000002 not within threshold
+C1CNC2CCNC3N2C1NCC3 failed validation. Label=0...
+
+Molecule: C1C(SC2=CC=CC=C2N=C1C3=CC=CC=C3)C4=CC=C(C=C4)[N+](=O)[O-] has a valid SMILES string
+Substructure match not found. Using default values: True
+Docking Score: 6.29971, Molecular weight: 360.43800
+C1C(SC2=CC=CC=C2N=C1C3=CC=CC=C3)C4=CC=C(C=C4)[N+](=O)[O-] passed validation. Label=1...
+
+Molecule: CC1=CC=C(C=C1)C2=NC3=CC=CC=C3SC(C2)C4=CC(=CC=C4)[N+](=O)[O-] has a valid SMILES string
+Substructure match not found. Using default values: True
+Docking Score: 5.79041, Molecular weight: 374.46500
+CC1=CC=C(C=C1)C2=NC3=CC=CC=C3SC(C2)C4=CC(=CC=C4)[N+](=O)[O-] passed validation. Label=1...
+
+Molecule: CC(C1=CC=CC=C1)(C(C2CCCCN2)C3=CC=CC=C3)O has a valid SMILES string
+Substructure match not found. Using default values: True
+Docking Score: 5.04307, Molecular weight: 295.42600
+Docking score: 5.0430663891037675 not within threshold
+CC(C1=CC=CC=C1)(C(C2CCCCN2)C3=CC=CC=C3)O failed validation. Label=0...
+
+Molecule: C1[C@H](COC2=C1C=C(C=C2F)F)N3C(=CNC3=S)CCN has a valid SMILES string
+Substructure match not found. Using default values: True
+Docking Score: 5.56386, Molecular weight: 311.35700
+C1[C@H](COC2=C1C=C(C=C2F)F)N3C(=CNC3=S)CCN passed validation. Label=1...
+
+Molecule: [B-](C1CCCN1C(=O)C(C(C)C)N)(O)(O)O has a valid SMILES string
+Substructure match not found. Using default values: True
+Docking Score: 4.16317, Molecular weight: 231.08100
+Docking score: 4.163171071967037 not within threshold
+[B-](C1CCCN1C(=O)C(C(C)C)N)(O)(O)O failed validation. Label=0...
+
+Molecule: OC1=C(O)C=C(OC(C=C2C)=O)C2=C1 has a valid SMILES string
+Substructure match not found. Using default values: True
+Docking Score: 4.47771, Molecular weight: 192.17000
+Docking score: 4.477714669682074 not within threshold
+Molecular Weight: 192.16999999999996 not within threshold
+OC1=C(O)C=C(OC(C=C2C)=O)C2=C1 failed validation. Label=0...
+
+Molecule: OC1=C(O)C(CCCCCCC)=NC2=CC=CC=C12 has a valid SMILES string
+Substructure match not found. Using default values: True
+Docking Score: 4.64260, Molecular weight: 259.34900
+Docking score: 4.642596819610421 not within threshold
+OC1=C(O)C(CCCCCCC)=NC2=CC=CC=C12 failed validation. Label=0...
+
+Molecule: CCCCCCCC1=NC2=CC=CC=C2C(O)=C1 has a valid SMILES string
+Substructure match not found. Using default values: True
+Docking Score: 5.57660, Molecular weight: 243.35000
+CCCCCCCC1=NC2=CC=CC=C2C(O)=C1 passed validation. Label=1...
+
+Molecule: OC1=C2N=CC=CC2=CC=C1 has a valid SMILES string
+Substructure match not found. Using default values: True
+Docking Score: 5.13365, Molecular weight: 145.16100
+Docking score: 5.13365392286032 not within threshold
+Molecular Weight: 145.16099999999997 not within threshold
+OC1=C2N=CC=CC2=CC=C1 failed validation. Label=0...
+
+Molecule: [C]C1=[C]C(=O)OC2=C1[C]=C(C(=[C]2)O[C][C][C]([C])C(=O)[N]C1=[C][C]=C([C]=[C]1)N1[C][C][C][C][C]1)[O] has a valid SMILES string
+Substructure match not found. Using default values: True
+Docking Score: 5.47268, Molecular weight: 420.29500
+Docking score: 5.472676657854575 not within threshold
+[C]C1=[C]C(=O)OC2=C1[C]=C(C(=[C]2)O[C][C][C]([C])C(=O)[N]C1=[C][C]=C([C]=[C]1)N1[C][C][C][C][C]1)[O] failed validation. Label=0...
+
+Molecule: O=C1[C]=[C]C2=C([C]=C(C(=[C]2)[O])OC2=[C][C]=C(N3[C]=NC4=C([C]=[C][C]=[C]4)C3=O)[C]=[C]2)O1 has a valid SMILES string
+Substructure match not found. Using default values: True
+Docking Score: 4.75349, Molecular weight: 384.26200
+Docking score: 4.753493940898542 not within threshold
+O=C1[C]=[C]C2=C([C]=C(C(=[C]2)[O])OC2=[C][C]=C(N3[C]=NC4=C([C]=[C][C]=[C]4)C3=O)[C]=[C]2)O1 failed validation. Label=0...
+
+Molecule: CCN(CC)C(=S)SSC(=S)N(CC)CC has a valid SMILES string
+Substructure match not found. Using default values: True
+Docking Score: 4.62180, Molecular weight: 296.55200
+Docking score: 4.621796293595669 not within threshold
+CCN(CC)C(=S)SSC(=S)N(CC)CC failed validation. Label=0...
+
+Molecule: C1CC2=C(C=C(C=C2C[C@H]1N3C(=CNC3=S)CN)F)F.Cl has a valid SMILES string
+Substructure match not found. Using default values: True
+Docking Score: 5.80049, Molecular weight: 331.81900
+C1CC2=C(C=C(C=C2C[C@H]1N3C(=CNC3=S)CN)F)F.Cl passed validation. Label=1...
+
+Molecule: C1[C@H](COC2=C1C=C(C=C2F)F)N3C(=CNC3=S)CCN has a valid SMILES string
+Substructure match not found. Using default values: True
+Docking Score: 4.77867, Molecular weight: 311.35700
+Docking score: 4.778674436453089 not within threshold
+C1[C@H](COC2=C1C=C(C=C2F)F)N3C(=CNC3=S)CCN failed validation. Label=0...
+
+Molecule: C1[C@H](COC2=C1C=C(C=C2F)F)N3C(=CNC3=S)CCNCC4=CC=CC=C4 has a valid SMILES string
+Substructure match not found. Using default values: True
+Docking Score: 5.44442, Molecular weight: 401.48200
+Docking score: 5.444421072375876 not within threshold
+C1[C@H](COC2=C1C=C(C=C2F)F)N3C(=CNC3=S)CCNCC4=CC=CC=C4 failed validation. Label=0...
+
+Molecule: C1=CC(=O)OC2=CC(=C(C=C21)O)OCCN(C)C(C)C(=O)N(C)C(=O)C(C)C(=O)O has a valid SMILES string
+Substructure match not found. Using default values: True
+Docking Score: 5.73354, Molecular weight: 420.41800
+C1=CC(=O)OC2=CC(=C(C=C21)O)OCCN(C)C(C)C(=O)N(C)C(=O)C(C)C(=O)O passed validation. Label=1...
+
+Molecule: C1=CC(=O)OC2=CC(=C(C=C21)O)OCC(C)C(=O)N(C)C(=O)C(C)C(=O)O has a valid SMILES string
+Substructure match not found. Using default values: True
+Docking Score: 4.50090, Molecular weight: 377.34900
+Docking score: 4.500897042284008 not within threshold
+C1=CC(=O)OC2=CC(=C(C=C21)O)OCC(C)C(=O)N(C)C(=O)C(C)C(=O)O failed validation. Label=0...
+
+Molecule: C1=CC(=O)OC2=CC(=C(C=C21)O)OCC(=O)N(C)C(=O)C(C)C(=O)O has a valid SMILES string
+Substructure match not found. Using default values: True
+Docking Score: 5.52574, Molecular weight: 349.29500
+C1=CC(=O)OC2=CC(=C(C=C21)O)OCC(=O)N(C)C(=O)C(C)C(=O)O passed validation. Label=1...
+
+Molecule: C1=CC(=O)OC2=CC(=C(C=C21)O)OCC(C)N(C)C(=O)C(C)C(=O)O has a valid SMILES string
+Substructure match not found. Using default values: True
+Docking Score: 6.14912, Molecular weight: 349.33900
+C1=CC(=O)OC2=CC(=C(C=C21)O)OCC(C)N(C)C(=O)C(C)C(=O)O passed validation. Label=1...
+
+Molecule: C1=CC(=O)OC2=CC(=C(C=C21)O)OCC(C)C(=O)N(C)C(=O)C(C)C(=O)C(C)C(=O)O has a valid SMILES string
+Substructure match not found. Using default values: True
+Docking Score: 5.96047, Molecular weight: 433.41300
+C1=CC(=O)OC2=CC(=C(C=C21)O)OCC(C)C(=O)N(C)C(=O)C(C)C(=O)C(C)C(=O)O passed validation. Label=1...
+
+Molecule: C1=CC(=O)OC2=CC(=C(C=C21)O)OC(C)C(=O)N(C)C(=O)C(C)C(=O)O has a valid SMILES string
+Substructure match not found. Using default values: True
+Docking Score: 6.22201, Molecular weight: 363.32200
+C1=CC(=O)OC2=CC(=C(C=C21)O)OC(C)C(=O)N(C)C(=O)C(C)C(=O)O passed validation. Label=1...
+
+------------ Database Validated ------------
+
+------------ Moving to phase 1 ------------
+
+------------ Phase 1 - Optimizing molecular_weight ------------
+------------ Iteration 1 ------------
+Current constraints:-
+docking_score: [5.5, inf]
+molecular_weight: [200, 700]
+logp: [0, 5]
+sas: [0, 5]
+substructure: C1=CC(=O)OC2=CC(=C(C=C21)O)O
+------------ Sample 1 ------------
+Sampled molecule: C1CC2=C(C=C(C=C2C[C@H]1N3C(=CNC3=S)CN)F)F.Cl
+Invalid molecule generated. Skippping...
+
+------------ Sample 2 ------------
+Sampled molecule: C1[C@H](COC2=C1C=C(C=C2F)F)N3C(=CNC3=S)CCN
+Molecule: C1=CC(=O)OC2=CC(=C(C=C21)O)OCC(=O)N(C)C(=O)C(C)C(=O)O has a valid SMILES string
+Duplicate molecule generated. Skippping...
+
+------------ Sample 3 ------------
+Sampled molecule: C1=CC(=O)OC2=CC(=C(C=C21)O)OCC(C)C(=O)N(C)C(=O)C(C)C(=O)C(C)C(=O)O
+Invalid molecule generated. Skippping...
+
+Total unique molecules generated: 0
+Total molecules accepted: 0/0
+Writing to file ./generated_mols_with_properties.jsonl
+Updating database...
+Database updated.
+
+------------ Iteration 2 ------------
+Current constraints:-
+docking_score: [5.5, inf]
+molecular_weight: [200, 700]
+logp: [0, 5]
+sas: [0, 5]
+substructure: C1=CC(=O)OC2=CC(=C(C=C21)O)O
+------------ Sample 1 ------------
+Sampled molecule: CCCCCCCC1=NC2=CC=CC=C2C(O)=C1
+Molecule: C1=CC(=O)OC2=CC(=C(C=C21)O)OCCCCC(=O)N(C)C(=O)C(C)C(=O)O has a valid SMILES string
+New molecule generated: C1=CC(=O)OC2=CC(=C(C=C21)O)OCCCCC(=O)N(C)C(=O)C(C)C(=O)O
+
+------------ Sample 2 ------------
+Sampled molecule: C1=CC=C2C(=C1)C=C(N=C2N=C(C3=CC=CC=N3)N)C4=CC=CC=N4
+Invalid molecule generated. Skippping...
+
+------------ Sample 3 ------------
+Sampled molecule: CCCC1=NC(=NC(=N1)NC(=O)C2=CC=CC=C2)NC(=O)C3=CC=CC=C3
+Molecule: C1=CC(=O)OC2=CC(=C(C=C21)O)OCC(C)C(=O)N(C)C(=O)C(C)C(=O)O has a valid SMILES string
+Duplicate molecule generated. Skippping...
+
+Total unique molecules generated: 1
+Calculating Docking Score...
+Substructure match not found. Using default values: True
+Docking Score: 5.16813, Molecular weight: 391.37600
+Docking score: 5.168128972369303 not within threshold
+New molecule does not satisfy constraints: C1=CC(=O)OC2=CC(=C(C=C21)O)OCCCCC(=O)N(C)C(=O)C(C)C(=O)O
+
+Total molecules accepted: 0/1
+Writing to file ./generated_mols_with_properties.jsonl
+Updating database...
+Database updated.
+
+--------- Validating Database ---------
+Molecule: C1[C@H](COC2=C1C=C(C=C2F)F)N3C(=CNC3=S)CCN has a valid SMILES string
+Substructure match not found. Using default values: True
+Docking Score: 5.83886, Molecular weight: 311.35700
+C1[C@H](COC2=C1C=C(C=C2F)F)N3C(=CNC3=S)CCN passed validation. Label=1...
+
+Molecule: C1=CC(=C(C=C1CCN)O)O has a valid SMILES string
+Substructure match not found. Using default values: True
+Docking Score: 4.87022, Molecular weight: 153.18100
+Docking score: 4.870221471847697 not within threshold
+Molecular Weight: 153.181 not within threshold
+C1=CC(=C(C=C1CCN)O)O failed validation. Label=0...
+
+Molecule: CCN(CC)C(=S)SSC(=S)N(CC)CC has a valid SMILES string
+Substructure match not found. Using default values: True
+Docking Score: 5.87853, Molecular weight: 296.55200
+CCN(CC)C(=S)SSC(=S)N(CC)CC passed validation. Label=1...
+
+Molecule: C1=CC=C(C(=C1)C2NC(=O)C(=C(S2)NC3=CC=CC=C3Cl)C#N)O has a valid SMILES string
+Substructure match not found. Using default values: True
+Docking Score: 5.63800, Molecular weight: 357.82200
+C1=CC=C(C(=C1)C2NC(=O)C(=C(S2)NC3=CC=CC=C3Cl)C#N)O passed validation. Label=1...
+
+Molecule: CN1C2=C(C(=S)N(C1=O)C)NC(=N2)SCCN3CCCC3 has a valid SMILES string
+Substructure match not found. Using default values: True
+Docking Score: 4.22034, Molecular weight: 325.46300
+Docking score: 4.220337369074289 not within threshold
+CN1C2=C(C(=S)N(C1=O)C)NC(=N2)SCCN3CCCC3 failed validation. Label=0...
+
+Molecule: C1=CC=C2C(=C1)C=C(N=C2N=C(C3=CC=CC=N3)N)C4=CC=CC=N4 has a valid SMILES string
+Substructure match not found. Using default values: True
+Docking Score: 5.51827, Molecular weight: 325.37500
+C1=CC=C2C(=C1)C=C(N=C2N=C(C3=CC=CC=N3)N)C4=CC=CC=N4 passed validation. Label=1...
+
+Molecule: CN1C2=C(C(=S)N(C1=O)C)NC(=N2)SCCN3CCCC3 has a valid SMILES string
+Substructure match not found. Using default values: True
+Docking Score: 5.14480, Molecular weight: 325.46300
+Docking score: 5.14479837810505 not within threshold
+CN1C2=C(C(=S)N(C1=O)C)NC(=N2)SCCN3CCCC3 failed validation. Label=0...
+
+Molecule: CN1CCN(CC1)C2CC3=CC=CC=C3SC4=C2C=C(C=C4)SC.C(=CC(=O)O)C(=O)O has a valid SMILES string
+Substructure match not found. Using default values: True
+Docking Score: 4.50039, Molecular weight: 472.63200
+Docking score: 4.500392435790581 not within threshold
+CN1CCN(CC1)C2CC3=CC=CC=C3SC4=C2C=C(C=C4)SC.C(=CC(=O)O)C(=O)O failed validation. Label=0...
+
+Molecule: CC1=CC=C(C=C1)N2CCN(CC2)CC(COC3=CC=CC4=CC=CC=C43)O has a valid SMILES string
+Substructure match not found. Using default values: True
+Docking Score: 5.56972, Molecular weight: 376.50000
+CC1=CC=C(C=C1)N2CCN(CC2)CC(COC3=CC=CC4=CC=CC=C43)O passed validation. Label=1...
+
+Molecule: CCCC1=NC(=NC(=N1)NC(=O)C2=CC=CC=C2)NC(=O)C3=CC=CC=C3 has a valid SMILES string
+Substructure match not found. Using default values: True
+Docking Score: 5.70455, Molecular weight: 361.40500
+CCCC1=NC(=NC(=N1)NC(=O)C2=CC=CC=C2)NC(=O)C3=CC=CC=C3 passed validation. Label=1...
+
+Molecule: C1CNC2CCNC3N2C1NCC3 has a valid SMILES string
+Substructure match not found. Using default values: True
+Docking Score: 5.45472, Molecular weight: 182.27100
+Docking score: 5.4547155957548386 not within threshold
+Molecular Weight: 182.27100000000002 not within threshold
+C1CNC2CCNC3N2C1NCC3 failed validation. Label=0...
+
+Molecule: C1C(SC2=CC=CC=C2N=C1C3=CC=CC=C3)C4=CC=C(C=C4)[N+](=O)[O-] has a valid SMILES string
+Substructure match not found. Using default values: True
+Docking Score: 6.29971, Molecular weight: 360.43800
+C1C(SC2=CC=CC=C2N=C1C3=CC=CC=C3)C4=CC=C(C=C4)[N+](=O)[O-] passed validation. Label=1...
+
+Molecule: CC1=CC=C(C=C1)C2=NC3=CC=CC=C3SC(C2)C4=CC(=CC=C4)[N+](=O)[O-] has a valid SMILES string
+Substructure match not found. Using default values: True
+Docking Score: 5.79041, Molecular weight: 374.46500
+CC1=CC=C(C=C1)C2=NC3=CC=CC=C3SC(C2)C4=CC(=CC=C4)[N+](=O)[O-] passed validation. Label=1...
+
+Molecule: CC(C1=CC=CC=C1)(C(C2CCCCN2)C3=CC=CC=C3)O has a valid SMILES string
+Substructure match not found. Using default values: True
+Docking Score: 5.04307, Molecular weight: 295.42600
+Docking score: 5.0430663891037675 not within threshold
+CC(C1=CC=CC=C1)(C(C2CCCCN2)C3=CC=CC=C3)O failed validation. Label=0...
+
+Molecule: C1[C@H](COC2=C1C=C(C=C2F)F)N3C(=CNC3=S)CCN has a valid SMILES string
+Substructure match not found. Using default values: True
+Docking Score: 5.56386, Molecular weight: 311.35700
+C1[C@H](COC2=C1C=C(C=C2F)F)N3C(=CNC3=S)CCN passed validation. Label=1...
+
+Molecule: [B-](C1CCCN1C(=O)C(C(C)C)N)(O)(O)O has a valid SMILES string
+Substructure match not found. Using default values: True
+Docking Score: 4.16317, Molecular weight: 231.08100
+Docking score: 4.163171071967037 not within threshold
+[B-](C1CCCN1C(=O)C(C(C)C)N)(O)(O)O failed validation. Label=0...
+
+Molecule: OC1=C(O)C=C(OC(C=C2C)=O)C2=C1 has a valid SMILES string
+Substructure match not found. Using default values: True
+Docking Score: 4.47771, Molecular weight: 192.17000
+Docking score: 4.477714669682074 not within threshold
+Molecular Weight: 192.16999999999996 not within threshold
+OC1=C(O)C=C(OC(C=C2C)=O)C2=C1 failed validation. Label=0...
+
+Molecule: OC1=C(O)C(CCCCCCC)=NC2=CC=CC=C12 has a valid SMILES string
+Substructure match not found. Using default values: True
+Docking Score: 4.64260, Molecular weight: 259.34900
+Docking score: 4.642596819610421 not within threshold
+OC1=C(O)C(CCCCCCC)=NC2=CC=CC=C12 failed validation. Label=0...
+
+Molecule: CCCCCCCC1=NC2=CC=CC=C2C(O)=C1 has a valid SMILES string
+Substructure match not found. Using default values: True
+Docking Score: 5.57660, Molecular weight: 243.35000
+CCCCCCCC1=NC2=CC=CC=C2C(O)=C1 passed validation. Label=1...
+
+Molecule: OC1=C2N=CC=CC2=CC=C1 has a valid SMILES string
+Substructure match not found. Using default values: True
+Docking Score: 5.13365, Molecular weight: 145.16100
+Docking score: 5.13365392286032 not within threshold
+Molecular Weight: 145.16099999999997 not within threshold
+OC1=C2N=CC=CC2=CC=C1 failed validation. Label=0...
+
+Molecule: [C]C1=[C]C(=O)OC2=C1[C]=C(C(=[C]2)O[C][C][C]([C])C(=O)[N]C1=[C][C]=C([C]=[C]1)N1[C][C][C][C][C]1)[O] has a valid SMILES string
+Substructure match not found. Using default values: True
+Docking Score: 5.47268, Molecular weight: 420.29500
+Docking score: 5.472676657854575 not within threshold
+[C]C1=[C]C(=O)OC2=C1[C]=C(C(=[C]2)O[C][C][C]([C])C(=O)[N]C1=[C][C]=C([C]=[C]1)N1[C][C][C][C][C]1)[O] failed validation. Label=0...
+
+Molecule: O=C1[C]=[C]C2=C([C]=C(C(=[C]2)[O])OC2=[C][C]=C(N3[C]=NC4=C([C]=[C][C]=[C]4)C3=O)[C]=[C]2)O1 has a valid SMILES string
+Substructure match not found. Using default values: True
+Docking Score: 4.75349, Molecular weight: 384.26200
+Docking score: 4.753493940898542 not within threshold
+O=C1[C]=[C]C2=C([C]=C(C(=[C]2)[O])OC2=[C][C]=C(N3[C]=NC4=C([C]=[C][C]=[C]4)C3=O)[C]=[C]2)O1 failed validation. Label=0...
+
+Molecule: CCN(CC)C(=S)SSC(=S)N(CC)CC has a valid SMILES string
+Substructure match not found. Using default values: True
+Docking Score: 4.62180, Molecular weight: 296.55200
+Docking score: 4.621796293595669 not within threshold
+CCN(CC)C(=S)SSC(=S)N(CC)CC failed validation. Label=0...
+
+Molecule: C1CC2=C(C=C(C=C2C[C@H]1N3C(=CNC3=S)CN)F)F.Cl has a valid SMILES string
+Substructure match not found. Using default values: True
+Docking Score: 5.80049, Molecular weight: 331.81900
+C1CC2=C(C=C(C=C2C[C@H]1N3C(=CNC3=S)CN)F)F.Cl passed validation. Label=1...
+
+Molecule: C1[C@H](COC2=C1C=C(C=C2F)F)N3C(=CNC3=S)CCN has a valid SMILES string
+Substructure match not found. Using default values: True
+Docking Score: 4.77867, Molecular weight: 311.35700
+Docking score: 4.778674436453089 not within threshold
+C1[C@H](COC2=C1C=C(C=C2F)F)N3C(=CNC3=S)CCN failed validation. Label=0...
+
+Molecule: C1[C@H](COC2=C1C=C(C=C2F)F)N3C(=CNC3=S)CCNCC4=CC=CC=C4 has a valid SMILES string
+Substructure match not found. Using default values: True
+Docking Score: 5.44442, Molecular weight: 401.48200
+Docking score: 5.444421072375876 not within threshold
+C1[C@H](COC2=C1C=C(C=C2F)F)N3C(=CNC3=S)CCNCC4=CC=CC=C4 failed validation. Label=0...
+
+Molecule: C1=CC(=O)OC2=CC(=C(C=C21)O)OCCN(C)C(C)C(=O)N(C)C(=O)C(C)C(=O)O has a valid SMILES string
+Substructure match not found. Using default values: True
+Docking Score: 5.73354, Molecular weight: 420.41800
+C1=CC(=O)OC2=CC(=C(C=C21)O)OCCN(C)C(C)C(=O)N(C)C(=O)C(C)C(=O)O passed validation. Label=1...
+
+Molecule: C1=CC(=O)OC2=CC(=C(C=C21)O)OCC(C)C(=O)N(C)C(=O)C(C)C(=O)O has a valid SMILES string
+Substructure match not found. Using default values: True
+Docking Score: 4.50090, Molecular weight: 377.34900
+Docking score: 4.500897042284008 not within threshold
+C1=CC(=O)OC2=CC(=C(C=C21)O)OCC(C)C(=O)N(C)C(=O)C(C)C(=O)O failed validation. Label=0...
+
+Molecule: C1=CC(=O)OC2=CC(=C(C=C21)O)OCC(=O)N(C)C(=O)C(C)C(=O)O has a valid SMILES string
+Substructure match not found. Using default values: True
+Docking Score: 5.52574, Molecular weight: 349.29500
+C1=CC(=O)OC2=CC(=C(C=C21)O)OCC(=O)N(C)C(=O)C(C)C(=O)O passed validation. Label=1...
+
+Molecule: C1=CC(=O)OC2=CC(=C(C=C21)O)OCC(C)N(C)C(=O)C(C)C(=O)O has a valid SMILES string
+Substructure match not found. Using default values: True
+Docking Score: 6.14912, Molecular weight: 349.33900
+C1=CC(=O)OC2=CC(=C(C=C21)O)OCC(C)N(C)C(=O)C(C)C(=O)O passed validation. Label=1...
+
+Molecule: C1=CC(=O)OC2=CC(=C(C=C21)O)OCC(C)C(=O)N(C)C(=O)C(C)C(=O)C(C)C(=O)O has a valid SMILES string
+Substructure match not found. Using default values: True
+Docking Score: 5.96047, Molecular weight: 433.41300
+C1=CC(=O)OC2=CC(=C(C=C21)O)OCC(C)C(=O)N(C)C(=O)C(C)C(=O)C(C)C(=O)O passed validation. Label=1...
+
+Molecule: C1=CC(=O)OC2=CC(=C(C=C21)O)OC(C)C(=O)N(C)C(=O)C(C)C(=O)O has a valid SMILES string
+Substructure match not found. Using default values: True
+Docking Score: 6.22201, Molecular weight: 363.32200
+C1=CC(=O)OC2=CC(=C(C=C21)O)OC(C)C(=O)N(C)C(=O)C(C)C(=O)O passed validation. Label=1...
+
+15 16 32

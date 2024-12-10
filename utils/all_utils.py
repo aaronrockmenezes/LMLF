@@ -1,3 +1,5 @@
+"""Reference file for the implementation of all util functions"""
+
 import openai
 import numpy as np
 import json
@@ -15,9 +17,6 @@ import time
 import shutil
 
 openai.api_key = 'ADD API KEY HERE'
-
-directory_path = '/home/datalab/BioLLM/pyLMLF-new'
-# directory_path = 'C:/Users/aaron/OneDrive/Desktop/Acads/APPCAIR/pyLMLF-new'
 
 
 class Tee:
@@ -60,11 +59,15 @@ def select_instance(D: List[Dict[str, Any]]) -> Dict[str, Any]:
 
 
 def assemble_system_prompt() -> str:
-    system_prompt = 'You are an AI with expertise in chemistry and molecular design. Your task is to generate novel, chemically plausible molecules with potential applications in areas like drug design or material science. You have access to a large database of known molecules and a powerful AI model that can generate new molecules. You are interested in generating a molecule that is valid and not in any known database and is similar to a given molecule. Answer in only SMILES strings. Do not generate any other type of output or English text. When generating molecules:\n \
+    sys_prompt = "You are a chemoinformatics expert that can generate new materials, specifically low-k dielectrics. \
+    Your task is to generate novel, chemically plausible materials with low dielectric constants. \
+    You have access to a large database of known materials and a powerful AI model that can generate new materials. \
+    You are interested in generating a molecule that is valid and not in any known database and is similar to a given molecule. \
+    Answer in only compositions, eg. CH4, SiO2, etc. Do not generate any other type of output or English text. When generating molecules:\n \
     - Ensure chemical validity (bonding, valence, etc.).\n \
     - Tailor molecules to specific properties (e.g., hydrophobicity, polarity) if requested.\n \
     - Be creative and propose original, viable structures.\n \
-    Answer in only SMILES strings. Do not generate any other type of output or English text.'
+    Answer in only compositions. Do not generate any other type of output or English text."
 
     return system_prompt
 
@@ -78,6 +81,9 @@ def assemble_constraints_prompt(constraints: Dict) -> str:
         4. The SA Score of the molecule must be between {constraints["sas"][0]} and {constraints["sas"][1]}\n \
         5. The molecule must contain the substructure C1=CC(=O)OC2=CC(=C(C=C21)O)O\n'
 
+    constraints_prompt = f"The constraints that the resultant molecule must satisfy are as follows:\n \
+        1. The dielectric constant of the material must be {constraints["e_total"][1]} or lower\n \
+        2. The density of the material must be less than {constraints["density"][1]} g/cm^3 or lower"
     return constraints_prompt
 
 
@@ -337,21 +343,10 @@ def check_constraints(smiles: str, properties: dict,
     assert len(
         docking_score_interval
     ) == 2, "Docking Score interval should be a list containing 2 elements: [min, max]"
-    assert len(
-        molecular_weight_interval
-    ) == 2, "Molecular Weight interval should be a list containing 2 elements: [min, max]"
-    assert len(
-        logp_score_interval
-    ) == 2, "Logp interval should be a list containing 2 elements: [min, max]"
-    assert len(
-        sa_score_interval
-    ) == 2, "SA Score interval should be a list containing 2 elements: [min, max]"
-    assert isinstance(substructure_match,
-                      bool), "Substrcuture match should be a bool: True/False"
 
     if properties is not None:
         print(
-            f"Docking Score: {properties['docking_score']:.5f}, Molecular weight: {properties['mw']:.5f}, logP: {properties['logp']:.5f}, SAS: {properties['sas']:.5f}, Substructure match: {properties['substructure_match']}"
+            f"Docking Score: {properties['docking_score']:.5f}, Molecular weight: {properties['mw']:.5f}"
         )
     else:
         print("No properties found for the molecule")
@@ -359,11 +354,7 @@ def check_constraints(smiles: str, properties: dict,
 
     if (docking_score_interval[0] <= properties['docking_score'] <=
             docking_score_interval[1] and molecular_weight_interval[0] <=
-            properties['mw'] <= molecular_weight_interval[1]
-            and logp_score_interval[0] <= properties['logp'] <=
-            logp_score_interval[1] and
-            sa_score_interval[0] <= properties['sas'] <= sa_score_interval[1]
-            and properties['substructure_match'] == substructure_match):
+            properties['mw'] <= molecular_weight_interval[1]):
         return True
     else:
         if not (docking_score_interval[0] <= properties['docking_score'] <=
@@ -374,15 +365,7 @@ def check_constraints(smiles: str, properties: dict,
         if not (molecular_weight_interval[0] <= properties['mw'] <=
                 molecular_weight_interval[1]):
             print(
-                f"Molecular Weight: {properties['mw']} not withing threshold")
-        if not (logp_score_interval[0] <= properties['logp'] <=
-                logp_score_interval[1]):
-            print(f"Logp: {properties['logp']} not withing threshold")
-        if not (sa_score_interval[0] <= properties['sas'] <=
-                sa_score_interval[1]):
-            print(f"SA Score: {properties['mw']} not withing threshold")
-        if not (properties['substructure_match'] == substructure_match):
-            print(f"Substructure match not found")
+                f"Molecular Weight: {properties['mw']} not within threshold")
 
         return False
 
@@ -395,7 +378,7 @@ def write_to_jsonl(molecules: List[dict], database_path: str, mode: str = 'a'):
             f.write(json.dumps(mol) + '\n')
 
 
-def calculate_docking_score_dummy(smiles: str) -> float:
+def calculate_e_total_dummy(smiles: str) -> float:
     """
     Dummy function to calculate the docking score of a molecule
 
@@ -409,79 +392,6 @@ def calculate_docking_score_dummy(smiles: str) -> float:
     float
     """
     return np.random.uniform(4, 6.5)
-
-
-# TODO Refine this function
-def calculate_docking_score(smiles,
-                            directory_path='/home/datalab/BioLLM/aaron_pyLMLF'
-                            ):
-    molecule = Chem.MolFromSmiles(smiles)
-    molecule = Chem.AddHs(molecule)
-    # Generate 2D coordinates for the molecule
-    try:
-        AllChem.Compute2DCoords(molecule)
-    except Exception as e:
-        print(f"Compute2DCoords Error: {e}. Skipping molecule: {smiles}")
-        return None
-
-    # Generate a 3D conformation of the molecule using the ETKDG method
-    AllChem.EmbedMolecule(molecule, AllChem.ETKDG())
-
-    # Optimize the 3D conformation
-    try:
-        AllChem.MMFFOptimizeMolecule(molecule)
-    except Exception as e:
-        print(f"MMFFOptimizeMolecule Error: {e}. Skipping molecule: {smiles}")
-        return None
-
-    # Generate a PDB file from the molecule
-    pdb_filename = '/home/datalab/BioLLM/aaron_pyLMLF/ligand.pdb'
-    writer = Chem.PDBWriter(pdb_filename)
-    writer.write(molecule)
-    writer.close()
-
-    # Run the gnina docking script
-    cmd = [
-        '/home/datalab/gnina', '--config', '4zel_config.txt', '--ligand',
-        '/home/datalab/BioLLM/aaron_pyLMLF/ligand.pdb', '--out', 'output.sdf',
-        '--log', '/home/datalab/BioLLM/aaron_pyLMLF/threshold_output_log.txt',
-        '--cpu', '4', '--num_modes', '1'
-    ]
-
-    # print("Docking Command:", ' '.join(cmd))
-    try:
-        # Used stdout=subprocess.DEVNULL to suppress the output since we are only interested in the docking score
-        subprocess.run(cmd,
-                       check=True,
-                       stderr=subprocess.PIPE,
-                       stdout=subprocess.DEVNULL)
-    except subprocess.CalledProcessError as e:
-        print("Docking process failed:", e)
-        print("Error output:", e.stderr)
-        return None
-
-    # Iterate over the files in the directory
-    for filename in os.listdir(directory_path):
-        if filename.endswith('.txt'):  # Consider only the text files
-            file_path = os.path.join(directory_path, filename)
-            with open(file_path, 'r') as file:
-                lines = file.readlines()
-
-                for i, line in enumerate(lines):
-                    if 'affinity' in line.lower() and 'cnn' in line.lower():
-                        third_next_line_values = lines[i + 3].split()
-                        if len(third_next_line_values) >= 4:
-                            try:
-                                cnn_affinity = float(
-                                    third_next_line_values[3].strip())
-                                print(
-                                    f"Docking Score for {smiles}: {cnn_affinity}\n"
-                                )
-                                return cnn_affinity
-                            except ValueError:
-                                pass
-
-    return None
 
 
 def validate_db(database: List[Dict], constraints: dict) -> bool:
@@ -551,7 +461,8 @@ def validate_db(database: List[Dict], constraints: dict) -> bool:
     return new_mols
 
 
-def create_new_folder(custom_suffix: str = None,
+def create_new_folder(directory_path:str,
+                      custom_suffix: str = None,
                       initial_jsonl_file: str = 'dockingzel.jsonl'):
     current_time = datetime.now().strftime("%Y-%m-%d_%H-%M")
     # Create a new folder with a custom suffix

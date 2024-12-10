@@ -1,72 +1,58 @@
-import openai
 import numpy as np
-import pandas as pd
-import json
 import os
-from typing import Optional, List, Dict, Any
+import openai
+from utils.LLM import *
+from utils.json_utils import *
+from utils.properties import *
 
-from rdkit import Chem
-from rdkit.Chem import AllChem
-from rdkit.Chem import Descriptors
-from rdkit.Contrib.SA_Score import sascorer
-import time
-from utils.utils import *
-
-openai.api_key = 'ADD API KEY HERE'
+client = openai.Client(api_key="ADD API KEY HERE")
+directory_path = 'ADD PATH HERE'
 
 # Notation
 """
-L: LLM
-B: Backgrond Knowledge
-Q: Query
-C: Constraints
 repsonse: LLM response
 k: Max iterations
 i: Current iteration
 n: Max samples per iteration
 j: Current sample
+r: Parameters to optimize
 """
 
 # k = Max iterations
-k = 20
+k = 10
 # n = Max samples per iteration
-n = 5
+n = 3
 # u = constraint update frequency
-u = 5
+u = 2
 # r = Parameters to optimize
-r = ['docking_score', 'molecular_weight', 'sa_score', 'logp']
+r = ['docking_score', 'cost', 'yield']
 
+# Initial Constraints need to have an upper and lower bound
+constraints = {}
+constraints['docking_score'] = [4, np.inf]
+constraints['molecular_weight'] = [200, 500]
+constraints['logp'] = [0, 5]
+constraints['sas'] = [0, 5]
+constraints['substructure'] = "C1=CC(=O)OC2=CC(=C(C=C21)O)O"
 
-# TODO: Make a function to update constraints based on r
-# make dummy function
 def update_constraints(constraints, phase):
     if phase == 0:
         constraints['docking_score'][0] += 0.5
-    elif phase == 1:
+    if phase == 1:
         constraints['molecular_weight'][1] -= 50
-    elif phase == 2:
-        constraints['sas'][1] -= 0.25
-    elif phase == 3:
-        constraints['logp'][1] -= 0.25
     return constraints
 
 
 target_mols_file, generated_mols_file, folder_path = create_new_folder(
-    custom_suffix='gpt40_mini_1', initial_jsonl_file="dockingzel.jsonl")
+    directory_path,
+    custom_suffix='gpt40_mini_1',
+    initial_jsonl_file="inhibitors.jsonl")
 
 # Open a file to write the output
 log_file = open(os.path.join(folder_path, 'output_logs.txt'), 'w')
 
 # Redirect stdout to both the terminal and the file
 sys.stdout = Tee(sys.stdout, log_file)
-
-# Initial Constraints, keep them low
-constraints = {}
-constraints['docking_score'] = [4.5, np.inf]
-constraints['molecular_weight'] = [200, 700]
-constraints['logp'] = [0, 5]
-constraints['sas'] = [0, 5]
-constraints['substructure_match'] = True
 
 generated_mols = set()
 
@@ -82,7 +68,7 @@ for phase in range(len(r)):
         print(f"------------ Iteration {i} ------------")
         j = 1
         E = set()
-        print(f"Current constraints:-")
+        print("Current constraints:-")
         for key, items in constraints.items():
             print(f"{key}: {items}")
 
@@ -136,9 +122,9 @@ for phase in range(len(r)):
         write_to_jsonl(acceptable_mols, generated_mols_file)
         write_to_jsonl(rejected_mols, generated_mols_file)
 
-        print(f"Updating database...")
+        print("Updating database...")
         write_to_jsonl(acceptable_mols, target_mols_file)
-        print(f"Database updated.\n")
+        print("Database updated.\n")
 
         # Re-validate database and change constraints every 5 iterations
         if (i % u == 0):
@@ -146,30 +132,32 @@ for phase in range(len(r)):
             if i != k:
                 constraints = update_constraints(constraints, phase)
 
-            print(f"--------- Validating Database ---------")
-            # Check if properties already present, if so use them and don't recalc
+            print("--------- Validating Database ---------")
+            # Check if properties already present, if so use them
             new_mols = validate_db(database=D, constraints=constraints)
 
-            # if phase == 1:
-            #     new_mols = get_parameter_ranking(
-            #         background_knowledge=new_mols,
-            #         parameter=r[phase],
-            #         model='gpt-4o-mini-2024-07-18',
-            #         temperature=0.7,
-            #         quantile_range=[0, 0.25])
-            # elif phase == 2:
-            #     new_mols = get_parameter_ranking(
-            #         background_knowledge=new_mols,
-            #         parameter=r[phase],
-            #         model='gpt-4o-mini-2024-07-18',
-            #         temperature=0.7,
-            #         quantile_range=[0.75, 1.0])
+            if phase == 1:
+                new_mols = get_parameter_ranking(
+                    client,
+                    background_knowledge=new_mols,
+                    parameter=r[phase],
+                    model='gpt-4o-mini-2024-07-18',
+                    temperature=0.7,
+                    quantile_range=[0, 0.25])
+            elif phase == 2:
+                new_mols = get_parameter_ranking(
+                    client,
+                    background_knowledge=new_mols,
+                    parameter=r[phase],
+                    model='gpt-4o-mini-2024-07-18',
+                    temperature=0.7,
+                    quantile_range=[0.75, 1.0])
 
             write_to_jsonl(new_mols, target_mols_file, mode='w')
             print("------------ Database Validated ------------\n")
     if phase != len(r) - 1:
         print(f"------------ Moving to phase {phase+1} ------------\n")
     elif phase == len(r) - 1:
-        print(f"------------ Optimization Complete ------------\n")
+        print("------------ Optimization Complete ------------\n")
 
-print(f"------------ Terminating LMLF ------------\n")
+print("------------ Terminating LMLF ------------\n")
